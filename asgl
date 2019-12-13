@@ -7,6 +7,7 @@ str5="p"
 str6="l"
 str7="h"
 str8="q"
+#!/bin/bash
 
 #adding games
 if [ "$answer1" == "$str2" ]
