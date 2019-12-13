@@ -1,69 +1,55 @@
-cd ~/.asgl-files
-read -p "Type a command (h for help):" answer1
-str2="a"
-str3="y"
-str4="n"
-str5="p"
-str6="l"
-str7="h"
-str8="q"
+#!/bin/bash
 
-#adding games
-if [ "$answer1" == "$str2" ]
-then
-	read -p "What is the name of the game?:" nameofgame
-	read -p "What is the executable for $nameofgame?:" locationofgame
-	read -p "Would you like to save this game?: [y/n]" command
-	if [ "$command" == "$str3" ]
-	then
-		echo Adding $nameofgame
-		touch $nameofgame.sh
-		echo $locationofgame > $nameofgame.sh
-		chmod +x $nameofgame.sh
-		echo Game Added!
-		asgl
-	fi
-	if [ "$command" == "$str4" ]
-	then
-		echo $nameofgame not added!
-		asgl
-	fi
-fi
+asgl_home=$HOME/.local/share/asgl
+asgl_games=$asgl_home/games
 
-#launching games
-if [ "$answer1" == "$str5" ]
-then
-	read -p "What game would you like to play?:" nameofgame
-	./$nameofgame.sh
-	asgl
-fi
+[ ! -d "$asgl_home" ] && mkdir "$asgl_home"
+[ ! -d "$asgl_games" ] && mkdir "$asgl_games"
 
-#listing games
-if [ "$answer1" == "$str6" ]
-then
-	echo 
-	ls | awk -F. '{ print $1 }'
-	echo 
-	asgl
-fi
+function addGame() {
+    read -rp "What is the name of the game?: " nameofgame;
+    read -rp "Where is the executable for $nameofgame?: " locationofgame;
+    read -rp "Would you like to save this game?: [y/n] " command;
+    case $command in
+        [Yy]* ) echo "Adding $nameofgame";
+                newgame="$asgl_games/$nameofgame.sh"
+                echo "$locationofgame" > "$newgame";
+                chmod +x "$newgame";
+                echo 'Game Added!';;
+        [Nn]* ) echo "$nameofgame not added!";;
+    esac
+}
 
-#help
-if [ "$answer1" == "$str7" ]
-then
-	echo 
-	echo asgl v1.0
-	echo a -------- add a game
-	echo p -------- play a game
-	echo l -------- listgames
-	echo h -------- list of commands
-	echo q -------- exit asgl
-	echo 
-	asgl
-fi
+function launchGame() {
+    read -rp "What game would you like to play?: " nameofgame;
+    sh "$asgl_games/$nameofgame.sh";
+}
 
-#exit
-if [ "$answer1" == "$str8" ]
-then
-	echo Exiting asgl
-	exit
-fi
+function listGames() {
+    echo 
+    ls "$asgl_games" | awk -F. '{ print $1 }'
+    echo 
+}
+
+function gethelp() {
+    echo 
+    echo a -------- add a game
+    echo p -------- play a game
+    echo l -------- listgames
+    echo h -------- list of commands
+    echo q -------- exit
+    echo 
+}
+
+
+while :
+do
+    read -rp "Type a command (h for help): " answer
+    case $answer in
+        [Aa]* ) addGame ;;
+        [Pp]* ) launchGame ;;
+        [Ll]* ) listGames ;;
+        [Hh]* ) gethelp ;;
+        [Qq]* ) echo 'Exiting asgl. Goodbye.' && exit ;;
+    esac
+done
