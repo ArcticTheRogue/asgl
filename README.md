@@ -7,5 +7,7 @@ Installation of `asgl` is quite simple.  First move `asgl` so it is in your `$PA
 
 # Future Plans
 -Add categorys
+
 -Improve the list command
+
 -Port to another language
