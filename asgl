@@ -43,11 +43,11 @@ list() {
 help() {
     clear
     echo -e "
-    a/A -------- Add a game.
-    p/P -------- Play a game.
-    l/L -------- List games.
-    h/H -------- List of commands.
-    q/Q -------- Exit.
+a/A -------- Add a game.
+p/P -------- Play a game.
+l/L -------- List games.
+h/H -------- List of commands.
+q/Q -------- Exit.
     " 
     menu
 }
