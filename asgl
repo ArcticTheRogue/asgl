@@ -3,53 +3,66 @@
 asgl_home=$HOME/.local/share/asgl
 asgl_games=$asgl_home/games
 
-[ ! -d "$asgl_home" ] && mkdir "$asgl_home"
-[ ! -d "$asgl_games" ] && mkdir "$asgl_games"
+[ ! -d "$asgl_home" ] && echo "Creating asgl home directory." && mkdir -pv "$asgl_home"
+[ ! -d "$asgl_games" ] && echo "Creating asgl game directory." && mkdir -pv "$asgl_games"
 
-function addGame() {
-    read -rp "What is the name of the game?: " nameofgame;
-    read -rp "Where is the executable for $nameofgame?: " locationofgame;
-    read -rp "Would you like to save this game?: [y/n] " command;
+add() {
+    clear
+    read -rp "What is the name of the game?: " nameofgame
+    read -rp "Where is the executable for $nameofgame?: " locationofgame
+    read -rp "Would you like to save this game?: [y/n] " command
     case $command in
-        [Yy]* ) echo "Adding $nameofgame";
+        [Yy]*) 
+                echo "Adding $nameofgame"
                 newgame="$asgl_games/$nameofgame.sh"
-                echo "$locationofgame" > "$newgame";
-                chmod +x "$newgame";
-                echo 'Game Added!';;
-        [Nn]* ) echo "$nameofgame not added!";;
+                echo "$locationofgame" > "$newgame"
+                chmod +x "$newgame"
+                echo 'Game Added!'
+                ;;
+        [Nn]*) echo "$nameofgame not added!";;
+        *) echo "Not a valid option."
     esac
+    menu
 }
 
-function launchGame() {
-    read -rp "What game would you like to play?: " nameofgame;
-    sh "$asgl_games/$nameofgame.sh";
+launch() {
+    clear
+    read -rp "What game would you like to play?: " nameofgame
+    sh "$asgl_games/$nameofgame.sh"
+    menu
 }
 
-function listGames() {
+list() {
+    clear
     echo 
     ls "$asgl_games" | awk -F. '{ print $1 }'
     echo 
+    menu
 }
 
-function gethelp() {
+help() {
+    clear
     echo 
-    echo a -------- add a game
-    echo p -------- play a game
-    echo l -------- listgames
-    echo h -------- list of commands
-    echo q -------- exit
+    echo "a/A -------- Add a game."
+    echo "p/P -------- Play a game."
+    echo "l/L -------- List games."
+    echo "h/H -------- List of commands."
+    echo "q/Q -------- Exit."
     echo 
+    menu
 }
 
-
-while :
-do
+menu() {
+    clear
     read -rp "Type a command (h for help): " answer
-    case $answer in
-        [Aa]* ) addGame ;;
-        [Pp]* ) launchGame ;;
-        [Ll]* ) listGames ;;
-        [Hh]* ) gethelp ;;
-        [Qq]* ) echo 'Exiting asgl. Goodbye.' && exit ;;
-    esac
-done
+        case $answer in
+            [Aa]*) add;;
+            [Pp]*) launch;;
+            [Ll]*) list;;
+            [Hh]*) help;;
+            [Qq]*) echo "Exiting asgl. Goodbye." && exit 0;;
+            *) echo "Not a valid option, exiting." && exit 1;;
+        esac
+}
+
+menu
