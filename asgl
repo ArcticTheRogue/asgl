@@ -51,7 +51,7 @@ fi
 if [ "$answer1" == "$str7" ]
 then
 	echo 
-	echo asgl
+	echo asgl v1.0
 	echo a -------- add a game
 	echo p -------- play a game
 	echo l -------- listgames
