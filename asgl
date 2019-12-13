@@ -1,5 +1,10 @@
 #!/bin/bash
 
+asgl_home=$HOME/.local/share/asgl
+asgl_games=$asgl_home/games
+
+[ ! -d "$asgl_home" ] && mkdir "$asgl_home"
+[ ! -d "$asgl_games" ] && mkdir "$asgl_games"
 
 function addGame() {
     read -rp "What is the name of the game?: " nameofgame;
