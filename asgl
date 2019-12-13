@@ -1,12 +1,3 @@
-cd ~/.asgl-files
-read -p "Type a command (h for help):" answer1
-str2="a"
-str3="y"
-str4="n"
-str5="p"
-str6="l"
-str7="h"
-str8="q"
 #!/bin/bash
 
 
@@ -44,3 +35,16 @@ function gethelp() {
     echo q -------- exit
     echo 
 }
+
+
+while :
+do
+    read -rp "Type a command (h for help): " answer
+    case $answer in
+        [Aa]* ) addGame ;;
+        [Pp]* ) launchGame ;;
+        [Ll]* ) listGames ;;
+        [Hh]* ) gethelp ;;
+        [Qq]* ) echo 'Exiting asgl. Goodbye.' && exit ;;
+    esac
+done
