@@ -43,6 +43,7 @@ list() {
 help() {
     clear
     echo 
+    echo "asga - v1.0"
     echo "a/A -------- Add a game."
     echo "p/P -------- Play a game."
     echo "l/L -------- List games."
