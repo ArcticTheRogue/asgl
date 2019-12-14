@@ -60,7 +60,7 @@ help() {
     clear
     echo -e "
 a/A -------- Add a game.
-a/R -------- Remove a game.
+r/R -------- Remove a game.
 p/P -------- Play a game.
 l/L -------- List games.
 h/H -------- List of commands.
