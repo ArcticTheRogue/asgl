@@ -1,7 +1,7 @@
 #!/bin/bash
 
-asgl_home=$HOME/.local/share/asgl
-asgl_games=$asgl_home/games
+asgl_home="$HOME/.local/share/asgl"
+asgl_games="$asgl_home/games"
 
 [ ! -d "$asgl_home" ] && echo "Creating asgl home directory." && mkdir -pv "$asgl_home"
 [ ! -d "$asgl_games" ] && echo "Creating asgl game directory." && mkdir -pv "$asgl_games"
