@@ -20,7 +20,7 @@ add() {
                 echo 'Game Added!'
                 ;;
         [Nn]*) echo "$nameofgame not added!";;
-        *) echo "Not a valid option."
+        *) echo "Not a valid option.";;
     esac
     menu
 }
@@ -36,7 +36,7 @@ remove() {
 		 echo "$nameofgame removed"
 		 ;;
             [N/n]*) echo "$nameofgame not removed";;
-	    *) echo "Not a valid option"
+	    *) echo "Not a valid option";;
             esac
     menu
 }
@@ -50,9 +50,9 @@ play() {
 
 list() {
     clear
-    echo 
-    ls "$asgl_games" | awk -F. '{ print $1 }'
-    echo 
+    echo -e "
+$(ls "$asgl_games" | awk -F. '{ print $1 }')
+    "
     menu
 }
 
