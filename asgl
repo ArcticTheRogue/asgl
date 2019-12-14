@@ -38,7 +38,7 @@ remove() {
             [N/n]*) echo "$nameofgame not removed";;
 	    *) echo "Not a valid option"
             esac
-	menu
+    menu
 }
 
 play() {
