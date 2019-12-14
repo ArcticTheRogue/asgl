@@ -69,7 +69,6 @@ remove() {
 	    menu
 }
 menu() {
-    clear
     read -rp "Type a command (h for help): " answer
         case $answer in
             [Aa]*) add;;
