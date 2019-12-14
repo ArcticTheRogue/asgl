@@ -44,6 +44,7 @@ help() {
     clear
     echo -e "
 a/A -------- Add a game.
+a/R -------- Remove a game.
 p/P -------- Play a game.
 l/L -------- List games.
 h/H -------- List of commands.
@@ -72,6 +73,7 @@ menu() {
     read -rp "Type a command (h for help): " answer
         case $answer in
             [Aa]*) add;;
+	    [Rr]*) remove;;
             [Pp]*) launch;;
             [Ll]*) list;;
             [Hh]*) help;;
