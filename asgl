@@ -42,14 +42,13 @@ list() {
 
 help() {
     clear
-    echo 
-    echo "asga - v1.0"
-    echo "a/A -------- Add a game."
-    echo "p/P -------- Play a game."
-    echo "l/L -------- List games."
-    echo "h/H -------- List of commands."
-    echo "q/Q -------- Exit."
-    echo 
+    echo -e "
+a/A -------- Add a game.
+p/P -------- Play a game.
+l/L -------- List games.
+h/H -------- List of commands.
+q/Q -------- Exit.
+    " 
     menu
 }
 
