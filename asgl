@@ -52,6 +52,21 @@ q/Q -------- Exit.
     menu
 }
 
+remove() {
+    clear
+    read -rp "What game would you like to remove?:" nameofgame
+    read -rp "Would you like to remove $nameofgame? [Y/n}:" command
+    case $command in
+	    [Y/y]*)
+                 echo "Removing $nameofgame"
+		 rm $asgl_games/$nameofgame.sh
+		 echo "$nameofgame removed"
+		 ;;
+            [N/n]*) echo "$nameofgame not removed";;
+	    *) echo "Not a valid option"
+            esac
+	    menu
+}
 menu() {
     clear
     read -rp "Type a command (h for help): " answer
