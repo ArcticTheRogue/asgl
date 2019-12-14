@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 asgl_home="$HOME/.local/share/asgl"
 asgl_games="$asgl_home/games"
