@@ -5,6 +5,23 @@
 # Installation
 Installation of `asgl` is very simple, all you need to do is move or copy it to your `$PATH` for example `/usr/local/bin`.
 
+# How to use `asgl`
+#### Adding games
+To add a game type `a` and then follow the prompts.  First you will be asked to enter the name of the game, then the executable for the game, and finally you will be asked if you are sure if you want to add the game.  If you confirm your game will be added.
+![asgl-add](https://gitlab.com/ArcticTheRogue/asgl/blob/master/Screenshots/asgl-add.png)
+#### Listing games
+To list your games simply type `l`, then you will get a list of the games you have added to `asgl`.
+![asgl-list](https://gitlab.com/ArcticTheRogue/asgl/blob/master/Screenshots/asgl-list.png)
+#### Playing games
+To play a game simple type `p` and then when `asgl` asks you tell it the game you would like to play.
+![asgl-play](https://gitlab.com/ArcticTheRogue/asgl/blob/master/Screenshots/asgl-play.png)
+#### Removing games
+If for whatever reason you wish to remove a game you can do so by typing `r`, and then following the prompts.  First you will be asked for the name of the game, and then to confirm that you want to delete it.  If you confirm then the game will be deleted from `asgl`.
+![asgl-remove](https://gitlab.com/ArcticTheRogue/asgl/blob/master/Screenshots/asgl-remove.png)
+#### Getting help
+If you ever need help with `asgl` you can type `h` and you will be given all the commands and their uses.
+![asgl-help](https://gitlab.com/ArcticTheRogue/asgl/blob/master/Screenshots/asgl-help.png)
+
 # Future Plans
 -Add categorys
 
