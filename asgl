@@ -12,15 +12,15 @@ add() {
     read -rp "Where is the executable for $nameofgame?: " locationofgame
     read -rp "Would you like to save this game?: [y/n] " command
     case $command in
-        [Yy]*) 
-                echo "Adding $nameofgame"
-                newgame="$asgl_games/$nameofgame.sh"
-                echo "$locationofgame" > "$newgame"
-                chmod +x "$newgame"
-                echo 'Game Added!'
-                ;;
-        [Nn]*) echo "$nameofgame not added!";;
-        *) echo "Not a valid option.";;
+    [Yy]*)
+        echo "Adding $nameofgame"
+        newgame="$asgl_games/$nameofgame.sh"
+        echo "$locationofgame" >"$newgame"
+        chmod +x "$newgame"
+        echo 'Game Added!'
+        ;;
+    [Nn]*) echo "$nameofgame not added!" ;;
+    *) echo "Not a valid option." ;;
     esac
     menu
 }
@@ -30,14 +30,14 @@ remove() {
     read -rp "What game would you like to remove?:" nameofgame
     read -rp "Would you like to remove $nameofgame? [Y/n}:" command
     case $command in
-	    [Y/y]*)
-                 echo "Removing $nameofgame"
-		 rm $asgl_games/$nameofgame.sh
-		 echo "$nameofgame removed"
-		 ;;
-            [N/n]*) echo "$nameofgame not removed";;
-	    *) echo "Not a valid option";;
-            esac
+    [Y/y]*)
+        echo "Removing $nameofgame"
+        rm "$asgl_games/$nameofgame.sh"
+        echo "$nameofgame removed"
+        ;;
+    [N/n]*) echo "$nameofgame not removed" ;;
+    *) echo "Not a valid option" ;;
+    esac
     menu
 }
 
@@ -50,9 +50,7 @@ play() {
 
 list() {
     clear
-    echo -e "
-$(ls "$asgl_games" | awk -F. '{ print $1 }')
-    "
+    find "$asgl_games" -maxdepth 1 ! -path "$asgl_games" -printf '%f\n' | sort
     menu
 }
 
@@ -65,21 +63,21 @@ p/P -------- Play a game.
 l/L -------- List games.
 h/H -------- List of commands.
 q/Q -------- Exit.
-    " 
+    "
     menu
 }
 
 menu() {
     read -rp "Type a command (h for help): " answer
-        case $answer in
-            [Aa]*) add;;
-	    [Rr]*) remove;;
-            [Pp]*) play;;
-            [Ll]*) list;;
-            [Hh]*) help;;
-            [Qq]*) echo "Exiting asgl. Goodbye." && exit 0;;
-            *) echo "Not a valid option, exiting." && exit 1;;
-        esac
+    case $answer in
+    [Aa]*) add ;;
+    [Rr]*) remove ;;
+    [Pp]*) play ;;
+    [Ll]*) list ;;
+    [Hh]*) help ;;
+    [Qq]*) echo "Exiting asgl. Goodbye." && exit 0 ;;
+    *) echo "Not a valid option, exiting." && exit 1 ;;
+    esac
 }
 
 menu
