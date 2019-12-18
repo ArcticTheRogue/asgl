@@ -72,13 +72,13 @@ q/Q -------- Exit.
 menu() {
     read -rp "Type a command (h for help): " answer
     case $answer in
-            [Aa]*) add;;
-            [Rr]*) remove;;
-            [Pp]*) play;;
-            [Ll]*) list;;
-            [Hh]*) help;;
-            [Qq]*) echo "Exiting asgl. Goodbye." && exit 0;;
-            *) echo "Not a valid option, exiting." && exit 1;;
+        [Aa]*) add;;
+        [Rr]*) remove;;
+        [Pp]*) play;;
+        [Ll]*) list;;
+        [Hh]*) help;;
+        [Qq]*) echo "Exiting asgl. Goodbye." && exit 0;;
+        *) echo "Not a valid option, exiting." && exit 1;;
     esac
 }
 
