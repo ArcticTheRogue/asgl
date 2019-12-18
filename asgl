@@ -32,6 +32,7 @@ remove() {
     case $command in
         [Y/y]*)
             echo "Removing $nameofgame"
+            rm "$asgl_games/$nameofgame.sh"
             echo "$nameofgame removed"
             ;;
         [N/n]*) echo "$nameofgame not removed";;
