@@ -27,8 +27,8 @@ add() {
 
 remove() {
     clear
-    read -rp "What game would you like to remove?:" nameofgame
-    read -rp "Would you like to remove $nameofgame? [Y/n}:" command
+    read -rp "What game would you like to remove?: " nameofgame
+    read -rp "Would you like to remove $nameofgame? [Y/n}: " command
     case $command in
     [Y/y]*)
         echo "Removing $nameofgame"

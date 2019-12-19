@@ -28,3 +28,5 @@ If you ever need help with `asgl` you can type `h` and you will be given all the
 -Improve the list command
 
 -Port to another language
+
+-Add the ability to import `.desktop` files
