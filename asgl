@@ -45,6 +45,7 @@ play() {
     clear
     read -rp "What game would you like to play?: " nameofgame
     sh "$asgl_games/$nameofgame.sh"
+    clear
     menu
 }
 
