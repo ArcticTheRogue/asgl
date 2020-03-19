@@ -29,4 +29,8 @@ If you ever need help with `asgl` you can type `h` and you will be given all the
 
 -Port to another language
 
--Add the ability to import `.desktop` files
+-~~Add the ability to import `.desktop` files~~ (I decided being able to import steam librarys was a better idea)
+
+-making it so games are listed with a number and you play them with this number
+
+-add the ability to import steam steam librarys
