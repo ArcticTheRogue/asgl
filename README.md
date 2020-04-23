@@ -23,14 +23,14 @@ If you ever need help with `asgl` you can type `h` and you will be given all the
 ![asgl-help](https://gitlab.com/ArcticTheRogue/asgl/raw/master/Screenshots/asgl-help.png)
 
 # Future Plans
--Add categorys
+- Add categories
 
--Improve the list command
+- Improve the list command
 
--Port to another language
+- Port to another language
 
--~~Add the ability to import `.desktop` files~~ (I decided being able to import steam librarys was a better idea)
+- ~~Add the ability to import `.desktop` files~~ (I decided being able to import steam libraries was a better idea)
 
--making it so games are listed with a number and you play them with this number
+- Making it so games are listed with a number and you play them with this number
 
--add the ability to import steam steam librarys
+- Add the ability to import steam steam libraries
