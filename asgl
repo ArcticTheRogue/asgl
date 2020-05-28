@@ -51,7 +51,7 @@ play() {
 
 list() {
     clear
-    find "$asgl_games" -maxdepth 1 ! -path "$asgl_games" -printf '%f\n' | sort
+    find "$asgl_games" -maxdepth 1 ! -path "$asgl_games" -printf '%f\n' | sort | awk -F. '{ print $1 }'
     menu
 }
 
