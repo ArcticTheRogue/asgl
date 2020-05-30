@@ -1,23 +1,32 @@
 # What is `asgl`?
 
-`asgl` or Arctic's Simple Game Library is a script written in Bash made for managing games.  I felt that you shouldn't have to use GUIs whenever you wanted to simply open a game so I made `asgl`.  `asgl` allows you to simply add, list, and play your games from it.
+*`agsl`, also known as Arctic's Simple Game Library.*
+
+ASGL is a script written in Bash made for managing games.
+
+Instead of opening a GUI to manage your games, ASGL offers a more terminal-friendly approach. With ASGL, you may list; modify or run your games.
 
 # Installation
 Installation of `asgl` is very simple, all you need to do is move or copy it to your `$PATH`, for example: `/usr/local/bin`.
 
 ## How to use `asgl`
 
+Executing ASGL opens an interactive prompt, in which you can type commands to run; list or modify your list of games.
+
 ### Adding games
 
-To add a game type `a` and then follow the prompts.  First you will be asked to enter the name of the game, then the executable for the game, and finally you will be asked if you are sure if you want to add the game.  If you confirm your game will be added.
+To add a game type `a` and then follow the prompts.
+
+First you will be asked to enter the name of the game, then the executable for the game. 
+Finally, you will be asked if you are sure if you want to add the game.
 
 Here is an example:
 
 ```sh
 $ a
-What is the name of the game?: xonotic
-Where is the exectable for xonotic?: xonotic-glx
-Would you like to save this game?: [y/n] Y
+What is the name of the game?: # xonotic
+Where is the exectable for xonotic?: # xonotic-glx
+Would you like to save this game?: [y/n] # Y
 Adding xonotic!
 Game Added!
 ```
@@ -25,11 +34,11 @@ Game Added!
 
 ### Listing games 
 
-To list your games simply type `l`, then you will get a list of the games you have added to `asgl`:
+To list the games you have added to `asgl`, type `l` in the ASGL prompt, as seen below:
 
 ```sh
 $ a
-l
+> l
 
 csgo
 okami
@@ -39,21 +48,24 @@ xonotic
 
 ### Playing games
 
-To play a game simple type `p` and then when `asgl` asks you tell it the game you would like to play.
+To play a game, type `p` inside the ASGL prompt. This can be observed below.
 
 ```sh
 $ a
-p
+> p
 
 What game would you like to play?: xonotic
 ```
 
 ### Removing games
-If for whatever reason you wish to remove a game you can do so by typing `r`, and then following the prompts.  First you will be asked for the name of the game, and then to confirm that you want to delete it.  If you confirm then the game will be deleted from `asgl`.
+If for whatever reason you wish to remove a game you can do so by typing `r`, then following the prompts.
+
+Firstly, you will be asked for the name of the game, and then to confirm that you want to delete it.
+If you confirm then the game will be deleted from `asgl`.
 
 ```sh
 $ a
-r
+> r
 
 What game would you like to remove?: xonotic
 Would you like to remove xonotic? [Y/n]
@@ -61,11 +73,11 @@ Would you like to remove xonotic? [Y/n]
 
 
 ### Getting help
-If you ever need help with `asgl` you can type `h` and you will be given all the commands and their uses.
+If you ever need help with `asgl` you can type `h` and you will be given all the commands and their functions.
 
 ```sh
 $ a
-h
+> h
 
 a/A -------- Add a game.
 r/R -------- Remove a game.
