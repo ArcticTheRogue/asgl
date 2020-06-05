@@ -6,7 +6,8 @@ ASGL is a script written in Bash made for managing games.
 
 Instead of opening a GUI to manage your games, ASGL offers a more terminal-friendly approach. With ASGL, you may list; modify or run your games.
 
-# Installation
+## Installation
+
 Installation of `asgl` is very simple, all you need to do is move or copy it to your `$PATH`, for example: `/usr/local/bin`.
 
 ## How to use `asgl`
@@ -23,7 +24,8 @@ Finally, you will be asked if you are sure if you want to add the game.
 Here is an example:
 
 ```sh
-$ a
+$ asgl
+Type a command (h for help): # a
 What is the name of the game?: # xonotic
 Where is the exectable for xonotic?: # xonotic-glx
 Would you like to save this game?: [y/n] # Y
@@ -37,8 +39,8 @@ Game Added!
 To list the games you have added to `asgl`, type `l` in the ASGL prompt, as seen below:
 
 ```sh
-$ a
-> l
+$ asgl
+Type a command (h for help): # l
 
 csgo
 okami
@@ -51,8 +53,8 @@ xonotic
 To play a game, type `p` inside the ASGL prompt. This can be observed below.
 
 ```sh
-$ a
-> p
+$ asgl
+Type a command (h for help): # p
 
 What game would you like to play?: xonotic
 ```
@@ -64,11 +66,11 @@ Firstly, you will be asked for the name of the game, and then to confirm that yo
 If you confirm then the game will be deleted from `asgl`.
 
 ```sh
-$ a
-> r
+$ asgl
+Type a command (h for help): # r
 
-What game would you like to remove?: xonotic
-Would you like to remove xonotic? [Y/n]
+What game would you like to remove?: # xonotic
+Would you like to remove xonotic? [Y/n] # y
 ```
 
 
@@ -76,8 +78,8 @@ Would you like to remove xonotic? [Y/n]
 If you ever need help with `asgl` you can type `h` and you will be given all the commands and their functions.
 
 ```sh
-$ a
-> h
+$ asgl
+Type a command (h for help): # h
 
 a/A -------- Add a game.
 r/R -------- Remove a game.
