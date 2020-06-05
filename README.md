@@ -23,7 +23,7 @@ Finally, you will be asked if you are sure if you want to add the game.
 
 Here is an example:
 
-```sh
+```none
 $ asgl
 Type a command (h for help): # a
 What is the name of the game?: # xonotic
@@ -38,7 +38,7 @@ Game Added!
 
 To list the games you have added to `asgl`, type `l` in the ASGL prompt, as seen below:
 
-```sh
+```none
 $ asgl
 Type a command (h for help): # l
 
@@ -52,7 +52,7 @@ xonotic
 
 To play a game, type `p` inside the ASGL prompt. This can be observed below.
 
-```sh
+```none
 $ asgl
 Type a command (h for help): # p
 
@@ -65,7 +65,7 @@ If for whatever reason you wish to remove a game you can do so by typing `r`, th
 Firstly, you will be asked for the name of the game, and then to confirm that you want to delete it.
 If you confirm then the game will be deleted from `asgl`.
 
-```sh
+```none
 $ asgl
 Type a command (h for help): # r
 
@@ -77,7 +77,7 @@ Would you like to remove xonotic? [Y/n] # y
 ### Getting help
 If you ever need help with `asgl` you can type `h` and you will be given all the commands and their functions.
 
-```sh
+```none
 $ asgl
 Type a command (h for help): # h
 
